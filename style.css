@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+html {
+    font-size: 24px;
+}
+body {
+    background-color: hsl(185, 41%, 84%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40rem;
+}
+main {
+    background-color: white;
+    border-radius: 1rem;
+    width: 38rem;
+    height: 19rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    display: flex;
+    overflow: hidden;
+}
+.user-input-field, .result-field {
+    flex-basis: 17.5rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin: 1rem;
+}
+.user-input-field {
+    padding-left: 1rem;
+}
+#calculator-input-list>li {
+    margin-bottom: 1.7rem;
+}
+.input-element-name {
+    color: hsl(186, 14%, 43%);
+    font-size: 0.7rem;
+}
+.input-tip-rate {
+    display: flex;
+    flex-wrap: wrap;
+}
+.input-tip-rate>li>button {
+    display: inline;
+    width: 4.9em;
+    height: 2.2rem;
+    border: 0;
+
+    margin: 0.3rem;
+    margin-left: 0;
+    margin-right: 0.6rem;
+    
+
+    font-size: 1rem;
+    color: white;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 0.3rem;
+}
+#custom-tip-rate {
+    width: 4.9rem;
+    height: 2.2rem;
+    margin-top: 0.3rem;
+    background-color: hsl(189, 41%, 97%);
+    border-radius: 0.3rem;
+    text-align: center;
+    vertical-align: bottom;
+}
+.user-input-field input {
+    border: 0;
+    background-color: hsl(189, 41%, 97%);
+    width: 16rem;
+    height: 1.8rem;
+    border-radius: 0.3rem;
+}
+
+
+.result-field {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 1rem;
+    margin-left: 0;
+}
+.result-name {
+    color: white;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
