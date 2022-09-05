@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Tip calculator app</title>
@@ -16,25 +17,56 @@
 </head>
 <body>
 
-  Bill
+  <header>
+    <img src="images/logo.svg" alt="logo image">
+  </header>
+  
+  <main>
+    <div class="user-input-field">
+      <ul id="calculator-input-list">
+        <li>
+          <div class="input-element-name">Bill</div>
+          <div class="input-element-field"><input type="text"></div>
+        </li>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+        <li>
+          <div class="input-element-name">Select Tip %</div>
+          <ul class="input-tip-rate">
+            <li><button>5%</button></li>
+            <li><button>10%</button></li>
+            <li><button>15%</button></li>
+            <li><button>25%</button></li>
+            <li><button>50%</button></li>
+            <li id="custom-tip-rate">Custom</li>
+          </ul>
+        </li>
 
-  Number of People
+        <li>
+          <div class="input-element-name">Number of People</div>
+          <div class="input-element-field"><input type="text"></div>
+        </li>
+      </ul>
+    </div>
 
-  Tip Amount
-  / person
+    <div class="result-field">
+      <ul id="result-list">
+        <li>
+          <div class="result-name">Tip Amount</div>
+          <div class="result-per-person">/ person</div>
+          <div class="result-price">$0.00</div>
+        </li>
+        <li>
+          <div class="result-name">Total</div>
+          <div class="result-per-person">/ person</div>
+          <div class="result-price">$0.00</div>
+        </li>
+      </ul>
 
-  Total
-  / person
+      <div class="reset-button">Reset</div>
+    </div>
+  </main>
 
-  Reset
+  
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
