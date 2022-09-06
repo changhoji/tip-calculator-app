@@ -9,6 +9,8 @@
   
   <title>Frontend Mentor | Tip calculator app</title>
 
+  <script src="tip_calculator.js" defer></script>
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -26,7 +28,7 @@
       <ul id="calculator-input-list">
         <li>
           <div class="input-element-name">Bill</div>
-          <div class="input-element-field"><input type="text"></div>
+          <div class="input-element-field"><input type="text" id="bill-input" placeholder="0" onchange="test(this);"></div>
         </li>
 
         <li>
@@ -37,37 +39,34 @@
             <li><button>15%</button></li>
             <li><button>25%</button></li>
             <li><button>50%</button></li>
-            <li id="custom-tip-rate">Custom</li>
+            <li id="custom-tip-rate" class="input-element-field"><input type=text" id="custom-tip-rate-input" placeholder="Custom"></li>
           </ul>
         </li>
 
         <li>
           <div class="input-element-name">Number of People</div>
-          <div class="input-element-field"><input type="text"></div>
+          <div class="input-element-field"><input type="text" id="people-num-input" placeholder="0"></div>
         </li>
       </ul>
     </div>
 
     <div class="result-field">
       <ul id="result-list">
-        <li>
+        <li id="tip-result">
           <div class="result-name">Tip Amount</div>
           <div class="result-per-person">/ person</div>
           <div class="result-price">$0.00</div>
         </li>
-        <li>
+        <li id="total-result">
           <div class="result-name">Total</div>
           <div class="result-per-person">/ person</div>
           <div class="result-price">$0.00</div>
         </li>
+        <li id="result-reset"><button class="reset-button" onclick="test(this);">RESET</button></li>
       </ul>
-
-      <div class="reset-button">Reset</div>
     </div>
   </main>
 
-  
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
