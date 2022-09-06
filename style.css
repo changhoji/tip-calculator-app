@@ -58,11 +58,11 @@ main {
     font-size: 0.7rem;
     margin-bottom: 0.3rem;
 }
-.radio-input-container {
+.input-tip-rate {
     display: flex;
     flex-wrap: wrap;
 }
-.radio-input-container>li>button {
+.input-tip-rate>li>button {
     display: inline;
     width: 4.9em;
     height: 2.2rem;
