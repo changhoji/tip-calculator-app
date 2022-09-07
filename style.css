@@ -181,9 +181,11 @@ input:focus {
     text-align: right;
 }
 
-.input-element-field>input.empty ~ .error-msg {
+
+.input-element-field>input.empty ~ .error-msg, .input-element-field>input.valid ~ .error-msg {
     display: none;
 }
+
 .input-element-field>input.error ~ .error-msg {
     display: visible;
 }
