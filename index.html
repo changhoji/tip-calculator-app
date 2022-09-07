@@ -28,24 +28,50 @@
       <ul id="calculator-input-list">
         <li>
           <div class="input-element-name">Bill</div>
-          <div class="input-element-field"><input type="text" id="bill-input" placeholder="0" change=></div>
+          <div class="input-element-field">
+            <input type="text" id="bill-input" placeholder="0" onchange="bill_changed(this);" class="empty">
+            <div id="bill-error" class="error-msg">d</div>
+          </div>
         </li>
 
         <li>
           <div class="input-element-name">Select Tip %</div>
-          <ul class="input-tip-rate">
-            <li><button>5%</button></li>
-            <li><button>10%</button></li>
-            <li><button>15%</button></li>
-            <li><button>25%</button></li>
-            <li><button>50%</button></li>
-            <li id="custom-tip-rate" class="input-element-field"><input type=text" id="custom-tip-rate-input" placeholder="Custom"></li>
-          </ul>
+          <div class="input-tip-rate">
+            <input type="radio" id="tip-5%" class="tip-radio" name="tip">
+            <label for="tip-5%">5%</label>
+
+            <input type="radio" id="tip-10%" class="tip-radio" name="tip">
+            <label for="tip-10%">10%</label>
+
+            <input type="radio" id="tip-15%" class="tip-radio" name="tip">
+            <label for="tip-15%">15%</label>
+
+            <input type="radio" id="tip-25%" class="tip-radio" name="tip">
+            <label for="tip-25%">25%</label>
+
+            <input type="radio" id="tip-50%" class="tip-radio" name="tip">
+            <label for="tip-50%">50%</label>
+            
+            <input type=text" id="custom-tip-rate" placeholder="Custom">
+
+          </div>
+          <!-- <ul class="input-tip-rate">
+            <li>5%</button></li>
+            <li>10%</button></li>
+            <li>15%</button></li>
+            <li>25%</button></li>
+            <li>50%</button></li>
+            </li>
+          </ul> -->
         </li>
 
         <li>
           <div class="input-element-name">Number of People</div>
-          <div class="input-element-field"><input type="text" id="people-num-input" placeholder="0"></div>
+          <div class="input-element-field">
+            <input type="text" id="people-num-input" placeholder="0" class="empty">
+            <div id="people-error" class="error-msg">d</div>
+          </div>
+          
         </li>
       </ul>
     </div>

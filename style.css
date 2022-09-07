@@ -9,11 +9,11 @@ html {
     font-size: 24px;
 }
 body {
+    min-width: 45rem;
     background-color: hsl(185, 41%, 84%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 ul {
     list-style: none;
@@ -27,7 +27,6 @@ header, .attribution {
     flex-grow: 1;
 }
 header>img {
-    margin-top: 1rem;
     vertical-align: middle;
 }
 main {
@@ -39,7 +38,7 @@ main {
     flex-shrink: 0;
 
     display: flex;
-    overflow: hidden;
+    overflow: visible;
 }
 .user-input-field, .result-field {
     flex-basis: 17.5rem;
@@ -52,6 +51,7 @@ main {
 }
 #calculator-input-list>li {
     margin-bottom: 1.3rem;
+    position: relative;
 }
 .input-element-name {
     color: hsl(186, 14%, 43%);
@@ -62,7 +62,36 @@ main {
     display: flex;
     flex-wrap: wrap;
 }
-.input-tip-rate>li>button {
+.tip-radio {
+    display: none;
+}
+.tip-radio + label, .tip-radio + label {
+    display: inline;
+    width: 4.9em;
+    height: 2.2rem;
+    border: 0;
+
+    margin: 0.3rem;
+    margin-left: 0;
+    margin-right: 0.6rem;
+
+    padding-top: 0.3rem;
+    
+    font-size: 1rem;
+    color: white;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 0.3rem;
+
+    text-align: center;
+    vertical-align: middle;
+
+    cursor: pointer;
+}
+.tip-radio:checked + label {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+/* .input-tip-rate>li>button {
     display: inline;
     width: 4.9em;
     height: 2.2rem;
@@ -77,20 +106,29 @@ main {
     color: white;
     background-color: hsl(183, 100%, 15%);
     border-radius: 0.3rem;
-}
-#custom-tip-rate-input {
+} */
+#custom-tip-rate {
     width: 4.9rem;
     height: 2.2rem;
     margin-top: 0.3rem;
     background-color: hsl(189, 41%, 97%);
     border-radius: 0.3rem;
     
+    font-size: 1rem;
+    color: hsl(183, 100%, 15%);
+    
     padding: 0.3rem;
+    padding-top: 0.2rem;
+    
 }
-#custom-tip-rate-input:focus {
+#custom-tip-rate:not(placeholder-shown) {
+    border: 0.1rem solid hsl(172, 67%, 45%);
+    text-align: center;
+}
+#custom-tip-rate:focus {
     text-align: right;
 }
-#custom-tip-rate-input::placeholder {
+#custom-tip-rate::placeholder {
     font-size: 1rem;
     color: hsl(186, 14%, 43%);
     text-align: center; 
@@ -130,6 +168,28 @@ input:focus {
     outline: 0;
     border: "";
     border: 0.1rem solid hsl(172, 67%, 45%);
+}
+
+.error-msg {
+    font-size: 0.7rem;
+    color: rgb(255, 102, 0);
+
+    position: absolute;
+
+    top: 0;
+    right: 1rem;
+    text-align: right;
+}
+
+.input-element-field>input.empty ~ .error-msg {
+    display: none;
+}
+.input-element-field>input.error ~ .error-msg {
+    display: visible;
+}
+
+#bill-input.error ~ .error-msg {
+    display: visible;
 }
 
 #result-list>li {
