@@ -68,6 +68,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 이걸 하면서 input type="radio"를 써보게 되면서 https://github.com/changhoji/FAQ-accordion-card에서 js를 사용하지 않고 그냥 각 아코디언 메뉴를 radio 타입의 인풋으로 만들고 :checked인 인풋 뒤에 따라오는 텍스트의 display를 설정하는 방법으로 해도 되겠다는 생각을 했음. (js로 다른 애니메이션 효과나 복잡한 작업을 하지 않고 딱 그것만 했기에)
 
+radio버튼 사이같은 데에 탭으로 전환시키고 싶어 이벤트리스너를 써보게 됨.
+
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:

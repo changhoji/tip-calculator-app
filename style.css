@@ -155,6 +155,8 @@ main {
     background-position-x: 1rem;
 
     text-align: right;
+
+    
 }
 #people-num-input {
     background-image: url('images/icon-person.svg');
