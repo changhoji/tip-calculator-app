@@ -172,7 +172,7 @@ input:focus {
 
 .error-msg {
     font-size: 0.7rem;
-    color: rgb(255, 102, 0);
+    color: rgb(255, 86, 86);
 
     position: absolute;
 
@@ -182,12 +182,15 @@ input:focus {
 }
 
 
-.input-element-field>input.empty ~ .error-msg, .input-element-field>input.valid ~ .error-msg {
+input.empty ~ .error-msg, input.valid ~ .error-msg {
     display: none;
 }
 
-.input-element-field>input.error ~ .error-msg {
+input.error ~ .error-msg {
     display: visible;
+}
+input.error {
+    border: 0.1rem solid rgb(255, 86, 86) !important;
 }
 
 #bill-input.error ~ .error-msg {

@@ -1,9 +1,10 @@
 var tip_text = document.querySelector("#tip-result>.result-price");
-var total_text = document.querySelector("#total-result>.reuslt-price");
+var total_text = document.querySelector("#total-result>.result-price");
 
 var bill = 0;
 var tip = 0;
 var people = 0;
+
 
 
 function bill_changed(self) {
@@ -12,6 +13,7 @@ function bill_changed(self) {
 
     if (input_value.length == 0) {
         self.className = "empty";
+        bill = 0;
     }
     else {
         if (isNaN(input_value)) {
@@ -28,9 +30,42 @@ function bill_changed(self) {
         }
         else {
             self.className = "valid";
-
+            bill = Number(input_value);
         }
     }
+
+    input_changed();
+}
+
+var a = "abc";
+
+
+function custom_tip_changed(self) {
+    var input_value = self.value;
+    if (input_value[input_value.length-1] == '%')
+        input_value = input_value.slice(0, -1);
+
+    if (input_value.length == 0) {
+        self.className = "empty";
+        tip = 0;
+    }
+    else {
+        if (isNaN(input_value)) {
+            self.className = "error";
+        }
+        else if (Number(input_value) < 0) {
+            self.className = "error";
+        }
+        else if (Number(input_value) == 0) {
+            self.className = "error";
+        }
+        else {
+            self.className = "valid";
+            tip = Number(input_value);
+        }
+    }
+
+    input_changed();
 }
 
 function people_changed(self) {
@@ -39,11 +74,16 @@ function people_changed(self) {
 
     if (input_value.length == 0) {
         self.className = "empty";
+        people = 0;
     }
     else {
         if (isNaN(input_value)) {
             self.className = "error";
             error_text.innerHTML = "Should be a Number";
+        }
+        else if (!Number.isInteger(Number(input_value))) {
+            self.className = "error";
+            error_text.innerHTML = "Shoud be Integer";
         }
         else if (Number(input_value) < 0) {
             self.className = "error";
@@ -55,8 +95,19 @@ function people_changed(self) {
         }
         else {
             self.className = "valid";
-            
+            people = Number(input_value);
         }
+    }
+
+    input_changed();
+}
+
+function input_changed() {
+    if (bill && tip && people) {
+        var tip_cost = bill*tip/100/people;
+        tip_text.innerHTML = "$"+tip_cost.toFixed(2);
+        var total_cost = bill/people+tip_cost;
+        total_text.innerHTML = "$"+total_cost.toFixed(2);
     }
 }
 
