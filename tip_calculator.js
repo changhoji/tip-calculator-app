@@ -1,6 +1,9 @@
 var tip_text = document.querySelector("#tip-result>.result-price");
 var total_text = document.querySelector("#total-result>.result-price");
 
+var tip_radio = document.querySelectorAll("input[name='tip']");
+var tip_input = document.querySelector("#custom-tip-rate");
+
 var bill = 0;
 var tip = 0;
 var people = 0;
@@ -37,8 +40,19 @@ function bill_changed(self) {
     input_changed();
 }
 
-var a = "abc";
+function tip_radio_clicked(self) {
+    tip_input.value = "";
+    tip = self.value;
 
+    input_changed();
+}
+
+function custom_tip_focused() {
+    for (var i = 0; i < tip_radio.length; i++) {
+        tip_radio[i].checked = false;
+    }
+    bill = 0;
+}
 
 function custom_tip_changed(self) {
     var input_value = self.value;
@@ -109,7 +123,23 @@ function input_changed() {
         var total_cost = bill/people+tip_cost;
         total_text.innerHTML = "$"+total_cost.toFixed(2);
     }
+    else {
+        tip_text.innerHTML = "$0.00";
+        total_text.innerHTML = "$0.00";
+    }
 }
 
+function reset_clicked() {
+    document.querySelector("#bill-input").value = "";
+    bill = 0;
+
+    document.querySelector("#people-num-input").value = "";
+    people = 0;
+
+    document.querySelector("#custom-tip-rate").value = "";
+    custom_tip_focused();
+
+    input_changed();
+}
 
 // js 실행시점과 관련된 내용: https://velog.io/@ssket/Script%EC%9D%98-%EC%8B%A4%ED%96%89-%EC%8B%9C%EC%A0%90-%EC%A1%B0%EC%A0%88%ED%95%98%EA%B8%B0
