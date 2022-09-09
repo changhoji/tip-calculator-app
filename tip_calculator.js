@@ -51,6 +51,7 @@ function custom_tip_focused() {
     for (var i = 0; i < tip_radio.length; i++) {
         tip_radio[i].checked = false;
     }
+    tip_input.value="";
     tip = 0;
 }
 
