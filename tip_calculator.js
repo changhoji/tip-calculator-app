@@ -53,6 +53,8 @@ function custom_tip_focused() {
     }
     tip_input.value="";
     tip = 0;
+    
+    input_changed();
 }
 
 function custom_tip_changed(self) {
