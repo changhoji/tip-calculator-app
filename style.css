@@ -113,10 +113,9 @@ main {
     
     padding: 0.3rem;
     padding-top: 0.2rem;
-    
+    border: 0.14rem solid hsl(172, 67%, 45%);
 }
 #custom-tip-rate:not(placeholder-shown) {
-    border: 0.14rem solid hsl(172, 67%, 45%);
     text-align: center;
 }
 #custom-tip-rate:focus {
@@ -189,7 +188,7 @@ input.error ~ .error-msg {
     display: visible;
 }
 input.error {
-    border: 0.1rem solid rgb(255, 86, 86) !important;
+    border-color: rgb(255, 86, 86) !important;
 }
 
 #bill-input.error ~ .error-msg {

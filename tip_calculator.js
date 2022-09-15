@@ -52,6 +52,7 @@ function custom_tip_focused() {
         tip_radio[i].checked = false;
     }
     tip_input.value="";
+    tip_input.className = "empty";
     tip = 0;
     
     input_changed();
@@ -70,10 +71,7 @@ function custom_tip_changed(self) {
         if (isNaN(input_value)) {
             self.className = "error";
         }
-        else if (Number(input_value) < 0) {
-            self.className = "error";
-        }
-        else if (Number(input_value) == 0) {
+        else if (Number(input_value) <= 0) {
             self.className = "error";
         }
         else {
@@ -134,12 +132,16 @@ function input_changed() {
 
 function reset_clicked() {
     document.querySelector("#bill-input").value = "";
+    document.querySelector("#bill-input").className = "empty";
     bill = 0;
 
+
     document.querySelector("#people-num-input").value = "";
+    document.querySelector("#people-num-input").clasName = "empty";
     people = 0;
 
     document.querySelector("#custom-tip-rate").value = "";
+    document.querySelector("#custom-tip-rate").className = "empty";
     custom_tip_focused();
 
     input_changed();
