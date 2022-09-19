@@ -9,7 +9,7 @@ html {
     font-size: 24px;
 }
 body {
-    min-width: 45rem;
+    min-width: 40rem;
     background-color: hsl(185, 41%, 84%);
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@ main {
 .tip-radio {
     display: none;
 }
-.tip-radio + label, .tip-radio + label {
+.tip-radio + label {
     display: inline;
     width: 4.9em;
     height: 2.2rem;
@@ -248,4 +248,37 @@ input.error {
     cursor: pointer;
     background-color: hsl(0, 100%, 72%);
     transition: all ease 0.7s;
+}
+
+@media screen and (max-width: 55rem) {
+    body {
+        max-width: 18rem;
+    }
+    main {
+        flex-direction: column;
+        width: 16rem;
+        height: 30rem;
+        align-items: center;
+
+    }
+    .user-input-field {
+        padding: 0;
+    }
+    .user-input-field input {
+        width: 12rem;
+    }
+    .input-tip-rate {
+        padding-left: 0.4rem;
+    }
+    .tip-radio + label{
+        width: 6.2rem;
+        height: 2rem;
+        border-radius: 0.2rem;
+    }
+    #custom-tip-rate {
+        width: 6.2rem;
+        height: 2rem;
+        border-radius: 0.2rem;
+    }
+    
 }
