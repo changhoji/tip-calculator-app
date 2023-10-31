@@ -250,7 +250,7 @@ input.error {
     transition: all ease 0.7s;
 }
 
-@media screen and (max-width: 55rem) {
+/* @media screen and (max-width: 55rem) {
     body {
         max-width: 18rem;
     }
@@ -281,4 +281,4 @@ input.error {
         border-radius: 0.2rem;
     }
     
-}
+} */
